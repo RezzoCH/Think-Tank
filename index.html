@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prüfungstool</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(36, 112, 224);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .title {
+            max-width: 600px;
+            margin: auto;
+            background-color: blue;
+            color: aliceblue;
+        }
+        
+        .version {
+            margin-left: 80%;
+        }
+        
+        h2 {
+            background-color: rgb(117, 117, 168);
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border-radius: 8px;
+            color: aliceblue;
+            background-color: rgba(0, 0, 255, 0.411);
+            box-shadow: 0 0 10px rgba(165, 31, 31, 0.1);
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        button {
+            width: 20%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        
+        input[type="checkbox"] {
+            font-display: inherit;
+            margin-right: 10px;
+            margin-bottom: 30px;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .startCheck {
+            background-color: chartreuse;
+            margin-top: 30px;
+        }
+        
+        .seeReport {
+            width: 20%;
+            height: 100px;
+            padding: 10px;
+            margin: 40px;
+            box-sizing: border-box;
+            color: rgb(244, 240, 255);
+            background-color: rgb(14, 67, 138);
+        }
+        
+        .sendReport {
+            width: 20%;
+            height: 100px;
+            padding: 10px;
+            margin: 40px;
+            box-sizing: border-box;
+            color: rgb(0, 0, 0);
+            background-color: rgb(212, 228, 233);
+        }
+        
+        .sendBug {
+            width: 20%;
+            height: 100px;
+            padding: 10px;
+            margin: 40px;
+            box-sizing: border-box;
+            color: rgb(244, 240, 255);
+            background-color: crimson;
+        }
+        
+        .checklistenbox {
+            max-width: 600px;
+            margin: auto;
+            margin-top: 50px;
+            border-radius: 8px;
+            color: rgb(0, 0, 0);
+            background-color: rgba(0, 225, 255, 0.411);
+            box-shadow: 0 0 10px rgba(165, 31, 31, 0.1);
+        }
+        
+        .auflistung {
+            text-align: left;
+            margin-bottom: 120px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="title">
+        <h1>
+            Prüfungstool
+        </h1>
+
+    </div>
+
+    <div class="container">
+        <br>
+        <label for="projectName">Projektname  <input type="text" id="projectName" name="projectName" required></label></br>
+
+
+        <label for="speed">Gemessene Geschwindigkeit <input type="number" id="speed" name="speed" min="1" max="120" required></label><br>
+
+
+        <label for="adjustingSpeed">Bereinigte Geschwindigkeit  <input type="text" id="adjustedSpeed" name="adjustedSpeed" readonly></label><br>
+
+
+        <label for="pedalAssist">Tretunterstützung? <input type="checkbox" id="pedalAssist" name="pedalAssist"></label><br>
+
+
+        <button class="startCheck" id="startCheck">Prüfung starten</button><br>
+
+
+
+        <div class="version">
+            <h5>Version 2.0</h5>
+        </div>
+    </div>
+
+    <div class="checklistenbox">
+        <div id="lmf" style="display: none;">
+            <h2>Leicht-Motorfahrrad</h2>
+            <ul class="auflistung">
+                <input type="checkbox" name="motorenkennzeichnung" id="lmfMotor"> <label for="motorenkennzeichnung">Motorenkennzeichnung</label><br>
+                <input type="checkbox" name="glocke" id="lmfGlocke"> <label for="glocke">Glocke</label><br>
+                <input type="checkbox" name="licht" id="lmfLicht"> <label for="licht">Licht</label><br>
+                <input type="checkbox" name="rueckstrahler" id="lmfRueckstrahler"> <label for="rueckstrahler">Rückstrahler</label><br>
+                <input type="checkbox" name="batterie" id="lmfBatterie"> <label for="batterie">Schutz der Batterie</label><br>
+                <input type="checkbox" name="kabel" id="lmfKabel"> <label for="kabel">Lose Kabel</label><br>
+                <input type="checkbox" name="reifen" id="lmfReifen"> <label for="reifen">Reifen</label><br>
+                <input type="checkbox" name="Bremsen" id="lmfBremsen"> <label for="bremsen">Bremsen</label><br>
+                <input type="checkbox" name="locker" id="lmfLocker"> <label for="locker">Lockere Teile</label><br>
+                <input type="checkbox" name="scharf" id="lmfScharf"> <label for="scharf">Scharfkantige Teile</label><br>
+        </div>
+
+        <div id="mfr" style="display: none;">
+            <h2>Motorfahrrad</h2>
+            <ul class="auflistung">
+                <input type="checkbox" name="motorenkennzeichnung" id="mfrMotor"> <label for="motorenkennzeichnung">Motorenkennzeichnung</label><br>
+                <input type="checkbox" name="versicherung" id="vmfrVersicherung"> <label for="versicherung">KS / Versicherung</label><br>
+                <input type="checkbox" name="vignette" id="mfrVignette"> <label for="vignette">Mofa Vignette</label><br>
+                <input type="checkbox" name="glocke" id="mfrGlocke"> <label for="glocke">Glocke</label><br>
+                <input type="checkbox" name="licht" id="mfrLicht"> <label for="licht">Licht</label><br>
+                <input type="checkbox" name="rueckstrahler" id="mfrRueckStrahler"> <label for="rueckstrahler">Rückstrahler</label><br>
+                <input type="checkbox" name="spiegel" id="mfrSpiegel"> <label for="mspiegel">Rückspiegel</label><br>
+                <input type="checkbox" name="batterie" id="mfrBatterie"> <label for="batterie">Schutz der Batterie</label><br>
+                <input type="checkbox" name="kabel" id="mfrKabel"> <label for="kabel">Lose Kabel</label><br>
+                <input type="checkbox" name="reifen" id="mfrReifen"> <label for="reifen">Reifen</label><br>
+                <input type="checkbox" name="Bremsen" id="mfrBremsen"> <label for="bremsen">Bremsen</label><br>
+                <input type="checkbox" name="locker" id="mfrLocker"> <label for="locker">Lockere Teile</label><br>
+                <input type="checkbox" name="scharf" id="mfrScharf"> <label for="scharf">Scharfkantige Teile</label><br>
+            </ul>
+        </div>
+
+        <div id="kmr" style="display: none;">
+            <h2>Kleinmotorrad</h2>
+            <ul class="auflistung">
+                <input type="checkbox" name="motorenkennzeichnung" id="kmrMotor"> <label for="motorenkennzeichnung">Motorenkennzeichnung</label><br>
+                <input type="checkbox" name="versicherung" id="kmrVersicherung"> <label for="versicherung">KS / Versicherung</label><br>
+                <input type="checkbox" name="glocke" id="kmrGlocke"> <label for="glocke">Glocke</label><br>
+                <input type="checkbox" name="licht" id="KMRLicht"> <label for="licht">Licht</label><br>
+                <input type="checkbox" name="rueckstrahler" id="kmrRueckStrahler"> <label for="rueckstrahler">Rückstrahler</label><br>
+                <input type="checkbox" name="spiegel" id="kmrSpiegel"> <label for="mspiegel">Rückspiegel</label><br>
+                <input type="checkbox" name="batterie" id="kmrBatterie"> <label for="batterie">Schutz der Batterie</label><br>
+                <input type="checkbox" name="kabel" id="kmrKabel"> <label for="kabel">Lose Kabel</label><br>
+                <input type="checkbox" name="reifen" id="kmrReifen"> <label for="reifen">Reifen</label><br>
+                <input type="checkbox" name="Bremsen" id="kmrBremsen"> <label for="bremsen">Bremsen</label><br>
+                <input type="checkbox" name="locker" id="kmrLocker"> <label for="locker">Lockere Teile</label><br>
+                <input type="checkbox" name="scharf" id="kmrScharf"> <label for="scharf">Scharfkantige Teile</label><br>
+            </ul>
+        </div>
+
+
+        <div id="mr" style="display: none;">
+            <h2>Motorrad</h2>
+            <ul class="auflistung">
+                <input type="checkbox" name="motorenkennzeichnung" id="mrMotor"> <label for="motorenkennzeichnung">Motorenkennzeichnung</label><br>
+                <input type="checkbox" name="versicherung" id="mrVersicherung"> <label for="versicherung">KS / Versicherung</label><br>
+                <input type="checkbox" name="glocke" id="mrGlocke"> <label for="glocke">Glocke</label><br>
+                <input type="checkbox" name="licht" id="mrLicht"> <label for="licht">Licht</label><br>
+                <input type="checkbox" name="rueckstrahler" id="mrRueckStrahler"> <label for="rueckstrahler">Rückstrahler</label><br>
+                <input type="checkbox" name="spiegel" id="mrSpiegel"> <label for="mspiegel">Rückspiegel</label><br>
+                <input type="checkbox" name="batterie" id="mrBatterie"> <label for="batterie">Schutz der Batterie</label><br>
+                <input type="checkbox" name="kabel" id="mrKabel"> <label for="kabel">Lose Kabel</label><br>
+                <input type="checkbox" name="reifen" id="mrReifen"> <label for="reifen">Reifen</label><br>
+                <input type="checkbox" name="Bremsen" id="mrBremsen"> <label for="bremsen">Bremsen</label><br>
+                <input type="checkbox" name="locker" id="mrLocker"> <label for="locker">Lockere Teile</label><br>
+                <input type="checkbox" name="scharf" id="mrScharf"> <label for="scharf">Scharfkantige Teile</label><br>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <Button class="seeReport" id="seeReport">Auswertung ansehen</Button>
+        <Button class="sendReport" id="sendReport">Auswertung senden</Button>
+        <Button class="sendBug" id="sendBug">Fehlermeldung</Button>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
